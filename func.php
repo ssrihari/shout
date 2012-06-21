@@ -4,7 +4,7 @@ function ip_addr(){
 }
 
 function is_valid_login($un, $pw){
-  $host="localhost"; // Host name
+  $host="localhost"; // Host name 
 	$username="root"; // Mysql username
 	$password=""; // Mysql password
 	$db_name="shout"; // Database name
@@ -12,7 +12,6 @@ function is_valid_login($un, $pw){
   
 	mysql_connect("$host", "$username", "$password")or die("cannot connect");
 	mysql_select_db("$db_name")or die("cannot select DB");
-
   $sql="SELECT * FROM $tbl_name WHERE username='$un' and password='$pw'";
   $result=mysql_query($sql);
 

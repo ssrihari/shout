@@ -38,11 +38,17 @@ function who_is_online(){
 
   $sql="SELECT * FROM $tbl_name WHERE ip !='NULL'";
   $result=mysql_query($sql);
-  $users = "";
+  
+#  @varsha: just understand the code that follows.. it worked.. ill be back..
+  $users = "<table>";
   while($row = mysql_fetch_array($result)){
-    $users = $users.$row['username']." | ";
+    $onlineUser = $row['username'];
+    $user_row = "<tr id=$onlineUser onclick=alert('asd')><td>$onlineUser</td></tr>";
+    $users = $users.$user_row;
   }
   
+  $users = $users."</table>";
+
   mysql_close($con);
   return $users;
 }

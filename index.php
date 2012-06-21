@@ -68,10 +68,10 @@
       }
       #statusArea{
         position:absolute;
-        left:5%;
-        top:88%;
-        width:90%;
-        height:12%;
+        left:80%;
+        top:6%;
+        width:15%;
+        height:60%;
         border-style:none;
       }
       body{

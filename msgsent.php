@@ -1,8 +1,11 @@
 <html>
   <body onload="window.scrollTo(0, document.body.scrollHeight);">
     <?php
-
-      $dataFile = "./data/chat.txt";
+      if (isset($_COOKIE["current_file"]));
+        $dataFile = $_COOKIE["current_file"];
+      else
+        $dataFile = "./data/chat.txt";
+        
       if(isset($_POST['msg']))
         {
           $msg = $_POST['msg'];

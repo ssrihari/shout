@@ -38,11 +38,10 @@ function who_is_online(){
   $sql="SELECT * FROM $tbl_name WHERE ip !='NULL'";
   $result=mysql_query($sql);
   
-#  @varsha: just understand the code that follows.. it worked.. ill be back..
   $users = "<table>";
   while($row = mysql_fetch_array($result)){
     $onlineUser = $row['username'];
-    $user_row = "<tr id=$onlineUser onclick=alert('asd')><td>$onlineUser</td></tr>";
+    $user_row = "<tr id=$onlineUser onclick=\"username_click_handler('$onlineUser')\"><td>$onlineUser</td></tr>";
     $users = $users.$user_row;
   }
   
@@ -51,5 +50,20 @@ function who_is_online(){
   mysql_close($con);
   return $users;
 }
-	   
+
+function current_username(){
+  $host="localhost"; // Host name
+	$username="root"; // Mysql username
+	$password=""; // Mysql password
+	$db_name="shout"; // Database name
+	$tbl_name="login"; // Table name
+  
+	$con = mysql_connect("$host", "$username", "$password")or die("cannot connect");
+	mysql_select_db("$db_name")or die("cannot select DB");
+  $cur_ip=ip_addr();
+  $sql="SELECT username FROM $tbl_name WHERE ip = '$cur_ip'";
+  $result=mysql_query($sql);
+  $row=mysql_fetch_array($result);
+  return $row['username'];  
+}	   
 ?>

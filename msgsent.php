@@ -1,7 +1,7 @@
 <html>
   <body onload="window.scrollTo(0, document.body.scrollHeight);">
     <?php
-      if (isset($_COOKIE["current_file"]));
+      if (isset($_COOKIE["current_file"]))
         $dataFile = $_COOKIE["current_file"];
       else
         $dataFile = "./data/chat.txt";

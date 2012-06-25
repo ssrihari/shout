@@ -1,15 +1,18 @@
-<?
+<?php
+
+$host="localhost"; // Host name 
+$username="visishta"; // Mysql username
+$password="sriram1958"; // Mysql password
+$db_name="visishta_shout"; // Database name
+$tbl_name="login"; // Table name
+
 function ip_addr(){
   return $_SERVER['REMOTE_ADDR'];
 }
 
 function is_valid_login($un, $pw){
-  $host="localhost"; // Host name 
-	$username="root"; // Mysql username
-	$password=""; // Mysql password
-	$db_name="shout"; // Database name
-	$tbl_name="login"; // Table name
-  
+
+  global $host, $username, $password, $db_name, $tbl_name;
 	mysql_connect("$host", "$username", "$password")or die("cannot connect");
 	mysql_select_db("$db_name")or die("cannot select DB");
   $sql="SELECT * FROM $tbl_name WHERE username='$un' and password='$pw'";
@@ -26,12 +29,8 @@ function is_valid_login($un, $pw){
 }
 
 function who_is_online(){
-  $host="localhost"; // Host name
-	$username="root"; // Mysql username
-	$password=""; // Mysql password
-	$db_name="shout"; // Database name
-	$tbl_name="login"; // Table name
-  
+
+  global $host, $username, $password, $db_name, $tbl_name;    
 	$con = mysql_connect("$host", "$username", "$password")or die("cannot connect");
 	mysql_select_db("$db_name")or die("cannot select DB");
 
@@ -52,12 +51,8 @@ function who_is_online(){
 }
 
 function current_username(){
-  $host="localhost"; // Host name
-	$username="root"; // Mysql username
-	$password=""; // Mysql password
-	$db_name="shout"; // Database name
-	$tbl_name="login"; // Table name
-  
+
+  global $host, $username, $password, $db_name, $tbl_name;    
 	$con = mysql_connect("$host", "$username", "$password")or die("cannot connect");
 	mysql_select_db("$db_name")or die("cannot select DB");
   $cur_ip=ip_addr();
@@ -66,4 +61,4 @@ function current_username(){
   $row=mysql_fetch_array($result);
   return $row['username'];  
 }	   
-?>
+?>    

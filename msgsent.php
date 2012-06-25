@@ -13,9 +13,7 @@
           echo file_get_contents($dataFile);
         }
       else
-#        echo "<table>";
         echo file_get_contents($dataFile);
-#        echo "</table>";
     ?>
   <body>
 </html>

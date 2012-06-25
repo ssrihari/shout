@@ -94,7 +94,7 @@
     </div><!--end of shout div-->
     <iframe id="statusArea" src="./onlinenow.php">
     </iframe>
-    <iframe id="updatesIFrame" src="./updates.php">
+    <iframe id="updatesIFrame" src="./updates.php" style="display:none">
     </iframe>
   </body>
 </html>

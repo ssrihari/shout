@@ -19,7 +19,7 @@
   if($count==1){
     $row=mysql_fetch_array($result);
     if(strcmp($row['filename'],$_COOKIE["current_file"])!=0)
-        setcookie("current_file", "."."$row['filename']", time()+3600*24*6);
+        setcookie("current_file", $row['filename'], time()+3600*24*6);
   }
   
   mysql_close($con);

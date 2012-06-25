@@ -23,8 +23,10 @@
         window.setInterval(function(){
           var fr = document.getElementById('iFrame')
           var fr2 = document.getElementById('statusArea')
+          var fr3 = document.getElementById('updatesIFrame')
           fr.src=fr.src
-          fr2.src=fr2.src          
+          fr2.src=fr2.src
+          fr3.src=fr3.src
         }, 2000);
         
       function shout(){
@@ -91,6 +93,8 @@
       </div>
     </div><!--end of shout div-->
     <iframe id="statusArea" src="./onlinenow.php">
+    </iframe>
+    <iframe id="updatesIFrame" src="./updates.php">
     </iframe>
   </body>
 </html>
